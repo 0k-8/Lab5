@@ -1,0 +1,22 @@
+@baseUrl = http://localhost:3000
+
+### 1. Отримати весь каталог автозапчастин (slug згенеровано сервісом)
+GET {{baseUrl}}/auto-parts
+
+### 2. Отримати одну автозапчастину за id
+GET {{baseUrl}}/auto-parts/part-002
+
+### 3. Створити нову автозапчастину (slug генерується автоматично)
+POST {{baseUrl}}/auto-parts
+Content-Type: application/json
+
+{
+  "title": "Гальмівні диски Brembo, передні",
+  "price": 2890,
+  "oemCode": "09.A417.11",
+  "condition": "new",
+  "carBrand": "Volkswagen"
+}
+
+### 4. Перевірити, що новий запис з'явився у каталозі
+GET {{baseUrl}}/auto-parts
